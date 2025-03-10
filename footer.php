@@ -1,4 +1,9 @@
 <footer>
+<?php 
+$footer_adresse = get_theme_mod('footer_adresse', '5800 Sherbrooke-est Montréal (Québec) H1X 2A2');
+$footer_telephone = get_theme_mod('footer_telephone', '(514-254-7131)');
+$footer_mission = get_theme_mod('footer_mission', 'Notre mission est de inspirer et de faciliter vos voyages en vous offrant des expériences inoubliables. Que ce soit une escapade citadine, une aventure en pleine nature ou un séjour détente, nous vous guidons vers les meilleures destinations avec des conseils personnalisés et des offres exclusives. Voyagez mieux, explorez plus!'); ?>
+
   <div class="piedpage global">
     <section class="piedpage__s1">
       <div class="piedpage__s1__externe">
@@ -9,14 +14,16 @@
       </div>
       <div class="piedpage__s1__adresse">
         <div class="piedpage__s1_adresse__coord">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum commodi molestias debitis nemo, culpa id, magnam similique dolor optio temporibus laborum. Inventore quasi quibusdam dicta rem harum quos amet non?
+        <p class="footer_adresse"><?php echo $footer_adresse ?></p>
+        <p class="footer_telephone"><?php echo $footer_telephone ?></p>
         </div>
         <div class="piedpage__s1_adresse__recherche">
           <?php get_search_form(); ?>
         </div>
       </div>
       <div class="piedpage__s1__description">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, nostrum sint deserunt architecto dolorem nisi delectus pariatur odit eius! Maiores dolore provident soluta culpa minus nesciunt doloremque vero incidunt accusamus!
+        <h3>Club de voyage</h3>
+      <p class="footer_mission"><?php echo $footer_mission ?></p>
       </div>
     </section>
     <section class="piedpage__s2"></section>
