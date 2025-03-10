@@ -39,11 +39,33 @@ function theme_tp_customize_register($wp_customize) {
         'sanitize_callback' => 'sanitize_text_field'
     ));
     ///////////////////// ajout du contrôle de la donnée
-    $wp_customize->add_control('hero_auteur', array(
+    $wp_customize->add_control('footer_adresse', array(
         'label' => __('Adresse', 'theme_tp'),
         'section' => 'footer_section',
         'type' => 'text',
     ));  
+    //////////////////////  ajout de la donnée
+    $wp_customize->add_setting('footer_telephone', array(
+        'default' => __('514-123-1234', 'theme_tp'),
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+    ///////////////////// ajout du contrôle de la donnée
+    $wp_customize->add_control('footer_telephone', array(
+            'label' => __('Téléphone', 'theme_tp'),
+            'section' => 'footer_section',
+            'type' => 'text',
+    ));  
+        //////////////////////  ajout de la donnée
+        $wp_customize->add_setting('footer_mission', array(
+            'default' => __('514-123-1234', 'theme_tp'),
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
+        ///////////////////// ajout du contrôle de la donnée
+        $wp_customize->add_control('footer_mission', array(
+                'label' => __('Téléphone', 'theme_tp'),
+                'section' => 'footer_section',
+                'type' => 'text',
+        )); 
 
 }
 
