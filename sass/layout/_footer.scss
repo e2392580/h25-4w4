@@ -3,7 +3,8 @@
 */
 footer{
     background-color: rgb(236,136,13);
-    color: black
+    color: black;
+    height: 100%;
 }
  
 .piedpage{
@@ -30,4 +31,10 @@ footer{
     }
    
   }
+}
+.piedpage__s2 {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }

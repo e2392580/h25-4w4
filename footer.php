@@ -29,7 +29,9 @@ $footer_mission = get_theme_mod('footer_mission', 'Lorem ipsum dolor, sit amet c
       <p class="footer_mission"><?php echo $footer_mission ?></p>
       </div>
     </section>
-    <section class="piedpage__s2"></section>
+    <section class="piedpage__s2">
+    <?php get_template_part('gabarit/icones'); ?>
+    </section>
     <section class="piedpage__s3"></section>
   </div>
 </footer>
