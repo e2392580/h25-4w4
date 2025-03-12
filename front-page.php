@@ -4,7 +4,7 @@
  $hero_background = get_theme_mod('hero_background', ''); 
  $hero_couleur = get_theme_mod('hero_couleur', ''); 
 ?>
-    <section class="hero" style="background-image: url(<?php echo $hero_background ?>)">
+    <section class="hero" style="background-image: url(<?php echo $hero_background ?>); color: <?php echo $hero_couleur ?>">
         <div class="hero__contenu global">
             <h1 class="hero__titre"><?php bloginfo("name") ?></h1>
             <p class="hero__description">

@@ -17,7 +17,6 @@
             the_custom_logo();
             }
             ?>
-                <img src="images/logo.png" alt="logo">
             </figure>
 
                 <input type="checkbox" id="menu-burger">
