@@ -46,5 +46,20 @@
         border: 2px solid black;
         border-radius: 12%;
         color: rgb(0, 0, 0);
+        background-color: #00ffe5;
     }
+}
+.post-categories {
+    list-style-type: none;
+    align-self: flex-start;
+    padding: 6px 12px;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 12%;
+    color: rgb(0, 0, 0);
+    background-color: #00b3ff;
+}
+.post-categories a{
+    text-decoration: none;
+    color: black;
 }
