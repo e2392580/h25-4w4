@@ -338,12 +338,15 @@ footer {
 .piedpage__s1__description {
   flex: 1 0 400px;
 }
-
 .piedpage__s2 {
   height: 30px;
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+.piedpage__s3 {
+  display: flex;
+  justify-content: center;
 }
 
 .form-container {

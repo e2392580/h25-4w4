@@ -31,10 +31,14 @@ footer{
     }
    
   }
-}
-.piedpage__s2 {
+  &__s2 {
     height: 30px;
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+&__s3 {
+    display: flex;
+    justify-content: center;
+}
 }

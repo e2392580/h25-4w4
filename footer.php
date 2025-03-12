@@ -32,7 +32,13 @@ $footer_mission = get_theme_mod('footer_mission', 'Lorem ipsum dolor, sit amet c
     <section class="piedpage__s2">
     <?php get_template_part('gabarit/icones'); ?>
     </section>
-    <section class="piedpage__s3"></section>
+    <section class="piedpage__s3">
+    <?php wp_nav_menu(array(
+                        "menu" => "principal",
+                        'container' =>'nav',
+                        'container_class' =>'entete__menu'
+                    )); ?>
+    </section>
   </div>
 </footer>
  
