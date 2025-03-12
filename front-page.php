@@ -2,6 +2,7 @@
 <?php
  $hero_auteur = get_theme_mod('hero_auteur', 'Default Title');
  $hero_background = get_theme_mod('hero_background', ''); 
+ $hero_couleur = get_theme_mod('hero_couleur', ''); 
 ?>
     <section class="hero" style="background-image: url(<?php echo $hero_background ?>)">
         <div class="hero__contenu global">
