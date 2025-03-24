@@ -77,6 +77,16 @@ function theme_tp_customize_register($wp_customize) {
         'section' => 'hero_section',
     )));
 
+    
+    $wp_customize->add_setting('hero_background', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    ///////////////////// Ajout du contrôle de la donnée
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
+        'label' => __('Image en arrière plan', 'theme_tp'),
+        'section' => 'hero_section',
+    )));
 }
 
 add_action('customize_register', 'theme_tp_customize_register');

@@ -4,8 +4,10 @@
     align-items: center;
 }
 .button__erreur {
-    border: 10px solid black;
-    background-color: blueviolet;
-    border-radius: 10rem;
+    border: 5px solid black;
+    background-color: rgb(64, 150, 255);
     text-decoration: none;
+}
+.erreur p {
+    color: black;
 }
