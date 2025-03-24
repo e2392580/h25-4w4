@@ -1,16 +1,9 @@
 <?php get_header(); ?>
-<h1>----------- ERROR 404 -----------</h1>
-    <section class="populaire">
-        <div class="global">
-
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <article>
-                    <h2><?php the_title(); ?></h2>
-                    <div><?php the_content() ?>
-            </article>
-                <?php endwhile; endif; ?>
-            </div>
-    </section>
+<section class="erreur">
+    <h1>OOPS!</h1>
+    <h2>Page non retrouvée</h2>
+    <p><a href="<?php echo get_home_url(); ?>"  class="button__erreur">Retourner à l'accueil</a></p>
+</section>
     <?php get_footer(); ?>
 </body>
 </html>

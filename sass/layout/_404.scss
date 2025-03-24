@@ -1,0 +1,11 @@
+.erreur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button__erreur {
+    border: 10px solid black;
+    background-color: blueviolet;
+    border-radius: 10rem;
+    text-decoration: none;
+}
