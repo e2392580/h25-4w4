@@ -77,17 +77,25 @@ function theme_tp_customize_register($wp_customize) {
         'section' => 'hero_section',
     )));
 
+        // Ajout de la section pour la page 404
+        $wp_customize->add_section('erreur_section', array(
+            'title' => __('Page Erreur 404', 'theme_tp'),
+            'priority' => 35,
+        ));
     
-    $wp_customize->add_setting('erreur_background', array(
-        'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ));
-    ///////////////////// Ajout du contrôle de la donnée
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_background', array(
-        'label' => __('Image en arrière plan', 'theme_tp'),
-        'section' => 'erreur_section',
-    )));
-}
+        // Ajout du réglage pour l'image de fond de la page 404
+        $wp_customize->add_setting('erreur_background', array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+    
+        // Ajout du contrôle pour l'image de fond de la page 404
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_background', array(
+            'label' => __('Image en arrière-plan pour la page 404', 'theme_tp'),
+            'section' => 'erreur_section',
+        )));
+    }
+
 
 add_action('customize_register', 'theme_tp_customize_register');
 ?>
