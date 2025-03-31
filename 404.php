@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <?php
-$erreur_background = get_theme_mod('erreur_background', '');
+$section_erreur = get_theme_mod('section_erreur', '');
+$section_couleur = get_theme_mod('section_couleur', '');
 ?>
-<section class="erreur" style="background-image: url('<?php echo esc_url($erreur_background); ?>'); background-size: contain; background-position: right top; background-repeat: no-repeat; height: 50vh; ">
-    <h1>404</h1>
-    <h2>Oups ! Page introuvable</h2>
-    <p>Il semble que la page que vous recherchez n'existe pas ou a été déplacée.</p>
+<section class="erreur" style="background-image: url('<?php echo esc_url($section_erreur); ?>'); color: <?php echo $section_couleur ?>; background-size: cover;">
+    <h1>Oops, vous avez échoué sur l'île 404 !</h1>
+    <p>Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur 'Accueil' pour découvrir à nouveau nos voyages d’exception !</p>
     <p><a href="<?php echo get_home_url(); ?>" class="button__erreur">Retourner à l'accueil</a></p>
 
    <div class="icones">

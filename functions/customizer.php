@@ -94,7 +94,37 @@ function theme_tp_customize_register($wp_customize) {
             'label' => __('Image en arrière-plan pour la page 404', 'theme_tp'),
             'section' => 'erreur_section',
         )));
+        
+        // Ajout de la section pour la page 404
+        $wp_customize->add_section('section_404', array(
+            'title' => __('Page Erreur 404 (Examen intra)', 'theme_tp'),
+            'priority' => 35,
+        ));
+            
+        // Ajout du réglage pour l'image de fond de la page 404
+        $wp_customize->add_setting('section_erreur', array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+            
+        // Ajout du contrôle pour l'image de fond de la page 404
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'section_erreur', array(
+            'label' => __('Image en arrière-plan pour la page 404', 'theme_tp'),
+            'section' => 'section_404',
+        )));
+            ///////////////////// Ajout de la couleur ///////////////////
+        $wp_customize->add_setting('section_couleur', array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        ///////////////////// Ajout du contrôle de la donnée
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'section_couleur', array(
+            'label' => __('Sélection de couleur', 'theme_tp'),
+            'section' => 'section_404',
+         )));
+        
     }
+    
 
 
 add_action('customize_register', 'theme_tp_customize_register');
