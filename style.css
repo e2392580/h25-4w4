@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /*
-Theme Name: TP2 Eric Vu
+Theme Name: TP1 Eddy Martin
 Theme URI: https://referenced.ca
-Author: Eric Vu
-Author URI: https://github.com/e2392580
+Author: Eddy Martin
+Author URI: https://github.com/eddytuto
 Description: Thème développé dans le cadre du cours 4w4
 Version: 1.0
 Requires at least: 6.0
@@ -383,7 +383,7 @@ footer {
   cursor: pointer;
 }
 
-.erreur {
+.erreur_404 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -392,20 +392,15 @@ footer {
   text-align: center;
   padding: 20px;
 }
-.erreur h1 {
+.erreur_404 h1 {
   font-size: 5rem;
-  color: #ff6b6b;
   margin-bottom: 10px;
+  background-color: rgba(255, 255, 254, 0.39);
 }
-.erreur h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 15px;
-}
-.erreur p {
+.erreur_404 p {
   font-size: 1.2rem;
-  color: #000000;
-  max-width: 600px;
+  max-width: 1000px;
+  background-color: rgba(255, 255, 254, 0.39);
 }
 
 .button__erreur {
@@ -415,10 +410,9 @@ footer {
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
-  color: white;
-  background: linear-gradient(135deg, #6dAEFF, #0056b3);
+  color: rgb(69, 168, 255);
+  background: rgb(248, 248, 62);
   border: none;
-  border-radius: 50px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -433,4 +427,28 @@ footer {
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+
+#menu-menu-404 {
+  gap: 50px;
+}
+
+#menu-item-188 {
+  font-size: 2rem;
+  background-color: #0056b3;
+}
+
+#menu-item-189 {
+  font-size: 2rem;
+  background-color: #0056b3;
+}
+
+#menu-item-190 {
+  font-size: 2rem;
+  background-color: #0056b3;
+}
+
+#menu-item-191 {
+  font-size: 2rem;
+  background-color: #0056b3;
 }/*# sourceMappingURL=style.css.map */

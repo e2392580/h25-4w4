@@ -113,16 +113,37 @@ function theme_tp_customize_register($wp_customize) {
             'section' => 'section_404',
         )));
             ///////////////////// Ajout de la couleur ///////////////////
-        $wp_customize->add_setting('section_couleur', array(
+        $wp_customize->add_setting('erreur_couleur', array(
             'default' => '',
             'sanitize_callback' => 'esc_url_raw',
         ));
         ///////////////////// Ajout du contrôle de la donnée
-        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'section_couleur', array(
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'erreur_couleur', array(
             'label' => __('Sélection de couleur', 'theme_tp'),
             'section' => 'section_404',
          )));
-        
+            //////////////////////  ajout de la donnée
+    $wp_customize->add_setting('erreur_titre', array(
+        'default' => __('Oops, vous avez échoué sur l île 404 !', 'theme_tp'),
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+    ///////////////////// ajout du contrôle de la donnée
+    $wp_customize->add_control('erreur_titre', array(
+            'label' => __('Titre', 'theme_tp'),
+            'section' => 'section_404',
+            'type' => 'text',
+    ));  
+        //////////////////////  ajout de la donnée
+        $wp_customize->add_setting('erreur_message', array(
+            'default' => __('Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur Accueil pour découvrir à nouveau nos voyages d’exception !', 'theme_tp'),
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
+        ///////////////////// ajout du contrôle de la donnée
+        $wp_customize->add_control('erreur_message', array(
+            'label' => __('Message', 'theme_tp'),
+            'section' => 'section_404',
+            'type' => 'text',
+        )); 
     }
     
 
