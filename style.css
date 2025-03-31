@@ -433,22 +433,54 @@ footer {
   gap: 50px;
 }
 
-#menu-item-188 {
+#menu-item-194, #menu-item-193, #menu-item-192, #menu-item-191 {
   font-size: 2rem;
-  background-color: #0056b3;
+  background-color: rgba(66, 109, 203, 0.5);
 }
 
-#menu-item-189 {
-  font-size: 2rem;
-  background-color: #0056b3;
+.menu-item a {
+  color: black;
 }
 
-#menu-item-190 {
-  font-size: 2rem;
-  background-color: #0056b3;
+@media (max-width: 768px) {
+  .erreur_404 h1 {
+    font-size: 3rem;
+  }
+  .erreur_404 p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .button__erreur {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  .icones {
+    flex-direction: column;
+    align-items: center;
+  }
+  #menu-menu-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #menu-item-194, #menu-item-193, #menu-item-192, #menu-item-191 {
+    font-size: 2rem;
+    background-color: rgba(66, 109, 203, 0.5);
+  }
 }
-
-#menu-item-191 {
-  font-size: 2rem;
-  background-color: #0056b3;
+@media (max-width: 480px) {
+  .erreur_404 h1 {
+    font-size: 2.5rem;
+  }
+  .erreur_404 p {
+    font-size: 0.9rem;
+  }
+  .button__erreur {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  #menu-item-194, #menu-item-193, #menu-item-192, #menu-item-191 {
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=style.css.map */

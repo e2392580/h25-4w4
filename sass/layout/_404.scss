@@ -1,4 +1,4 @@
-    .erreur_404 {
+.erreur_404 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,6 @@
         margin-bottom: 10px;
         background-color: rgba(255, 255, 254, 0.39);
     }
-
 
     p {
         font-size: 1.2rem;
@@ -35,36 +34,81 @@
     transition: all 0.3s ease-in-out;
     position: relative;
 
-
     &:hover {
         background: linear-gradient(135deg, #0056b3, #6dAEFF);
         transform: translateY(-3px);
         box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
     }
-
 }
+
 .icones {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
+
 #menu-menu-404 {
     gap: 50px;
 }
-#menu-item-188 {
+
+#menu-item-194, #menu-item-193, #menu-item-192, #menu-item-191 {
     font-size: 2rem;
-    background-color: #0056b3;
-}
-#menu-item-189{
-    font-size: 2rem;
-    background-color: #0056b3;
-}
-#menu-item-190 {
-    font-size: 2rem;
-    background-color: #0056b3;
-}
-#menu-item-191{
-    font-size: 2rem;
-    background-color: #0056b3;
+    background-color: rgba(66, 109, 203, 0.5);
 }
 
+.menu-item a {
+    color: black;
+}
+
+// Médias Queries pour la version mobile
+@media (max-width: 768px) {
+    .erreur_404 h1 {
+        font-size: 3rem; // Réduit la taille du titre
+    }
+
+    .erreur_404 p {
+        font-size: 1rem; // Réduit la taille du texte
+        max-width: 90%; // Réduit la largeur pour mieux s'adapter à l'écran
+    }
+
+    .button__erreur {
+        padding: 10px 20px; // Réduit la taille du bouton
+        font-size: 1rem; // Réduit la taille du texte du bouton
+    }
+
+    .icones {
+        flex-direction: column; // Empile les icônes pour économiser de l'espace
+        align-items: center;
+    }
+
+    #menu-menu-404 {
+        display: flex;
+        flex-direction: column; // Empile les éléments du menu
+        align-items: center;
+        gap: 20px; // Réduit l'espace entre les éléments du menu
+    }
+
+    #menu-item-194, #menu-item-193, #menu-item-192, #menu-item-191 {
+        font-size: 2rem; // Réduit la taille de la police des éléments du menu
+        background-color: rgba(66, 109, 203, 0.5);
+    }
+}
+
+@media (max-width: 480px) {
+    .erreur_404 h1 {
+        font-size: 2.5rem; // Taille encore plus petite sur très petits écrans
+    }
+
+    .erreur_404 p {
+        font-size: 0.9rem; // Taille du texte encore plus petite
+    }
+
+    .button__erreur {
+        padding: 8px 16px; // Réduit la taille du bouton encore plus
+        font-size: 0.9rem; // Réduit la taille du texte du bouton
+    }
+
+    #menu-item-194, #menu-item-193, #menu-item-192, #menu-item-191 {
+        font-size: 1.2rem; // Réduit la taille de la police sur très petits écrans
+    }
+}
