@@ -25,11 +25,7 @@ wp_enqueue_script(
     true
 );
 }
-/*
- function enqueue_custom_scripts() {
-  
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
-*/
+
 add_action('wp_enqueue_scripts', 'theme_4w4_enqueue_styles');
  
 /**
