@@ -1,45 +1,62 @@
-/*
-    Script js permettant d'extraire des destinations de voyage
-*/
-(function(){
-    console.log("destination.js")
-    const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
-    const domaine = window.location.href
-    const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
-    console.log(apiUrl)
-    function parcourir_bouton(){
+(function() {
+    console.log("destination.js");
+
+    const categoryId = 3; // Replace with the desired category ID
+    const domaine = window.location.href;
+    const apiUrl = `${domaine}/wp-json/wp/v2/posts?categories=${categoryId}`;
+    console.log(apiUrl);
+
+    // Function to handle category button clicks
+    function parcourir_bouton() {
         const categorie__ul__li = document.querySelectorAll(".categorie__ul__li");
+
         categorie__ul__li.forEach(elm => {
-            elm.addEventListener('click', (e) => {
-                // Empêche l'événement de propagation si nécessaire
-                e.preventDefault();
- 
-                // Logique de filtrage selon la catégorie ou une action spécifique
+            elm.addEventListener('mousedown', (e) => {
+                e.preventDefault(); // Prevent default behavior, like text selection
+
+                // Remove "active" class from all buttons
+                categorie__ul__li.forEach(button => {
+                    button.classList.remove('active');
+                });
+
+                // Add "active" class to the clicked button
+                e.target.classList.add('active');
+
+                // Get the category ID from the clicked button
                 const categorieId = e.target.dataset.categoryId;
                 console.log(`Catégorie cliquée: ${categorieId}`);
-               
-                // Pour l'exemple, je recharge la liste des articles selon la catégorie
+
+                // Fetch and display articles for the selected category
                 fetchArticles(categorieId);
             });
         });
     }
- 
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            const destinationList = document.querySelector('.destination__list');
-            data.forEach(article => {
-                const articleElement = document.createElement('div');
-               // <div>console.log(article.title.rendered)</div>
-                articleElement.innerHTML = `
-                    <h3>${article.title.rendered}</h3>
-                    <div>${article.excerpt.rendered}</div>
-                    <a href="${article.link}">Lire plus</a>
-                `;
-                destinationList .appendChild(articleElement);
-            });
-        })
-        .catch(error => console.error('Erreur lors de la récupération des articles:', error));
-})()
 
- 
+    // Function to fetch articles based on the category ID
+    function fetchArticles(categoryId) {
+        const apiUrl = `${domaine}/wp-json/wp/v2/posts?categories=${categoryId}`;
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const destinationList = document.querySelector('.destination__list');
+                destinationList.innerHTML = ''; // Clear the list before adding new articles
+
+                data.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.innerHTML = `
+                        <h3>${article.title.rendered}</h3>
+                        <p>${article.excerpt.rendered}</p>
+                        <a href="${article.link}">Lire plus</a>
+                    `;
+                    destinationList.appendChild(articleElement);
+                });
+            })
+            .catch(error => console.error('Erreur lors de la récupération des articles:', error));
+    }
+
+    // Load articles for the default category on page load
+    fetchArticles(categoryId);
+
+    // Enable the click event on category buttons
+    parcourir_bouton();
+})();

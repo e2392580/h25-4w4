@@ -1,0 +1,27 @@
+.categorie__ul {
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    justify-content: center;
+
+    &__li {
+        padding: 10px;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        color: white;
+        background-color: rgb(51, 75, 255);
+        cursor: pointer; /* Change cursor to a hand when hovered */
+        transition: background-color 0.3s ease, border 0.3s ease;
+    }
+
+    /* Optionally, you can also add a hover effect */
+    &__li:hover {
+        background-color: rgb(39, 59, 204); /* Change background color on hover */
+    }
+
+    /* Style for the active category button */
+    &__li.active {
+        background-color: rgb(154, 162, 224); /* Active button background */
+        border: 2px solid rgb(255, 255, 255); /* Optional: add a border to highlight the active button */
+    }
+}

@@ -203,6 +203,46 @@ main h1{
     font-size: 2rem;
 }
     */
+.categorie__ul {
+  display: flex;
+  gap: 15px;
+  list-style-type: none;
+  justify-content: center;
+  /* Optionally, you can also add a hover effect */
+  /* Style for the active category button */
+}
+.categorie__ul__li {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(51, 75, 255);
+  cursor: pointer; /* Change cursor to a hand when hovered */
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+.categorie__ul__li:hover {
+  background-color: rgb(39, 59, 204); /* Change background color on hover */
+}
+.categorie__ul__li.active {
+  background-color: rgb(154, 162, 224); /* Active button background */
+  border: 2px solid rgb(255, 255, 255); /* Optional: add a border to highlight the active button */
+}
+
+.destination {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.destination__list {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
