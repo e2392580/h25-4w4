@@ -1,13 +1,140 @@
 .destination {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    width: 1100px;
+    margin: 0 auto;  /* Centers the container horizontally */
+    padding: 20px;   /* Optional: Adds some padding inside the container */
 }
+
+.destination__titre,
 .destination__list {
-    max-width: 1000px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    justify-content: center;
+}
+
+/* Conteneur de l'élément destination */
+.destination__item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #66abe3; /* White background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a floating effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination__item:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Wrapper du titre et du bouton */
+.destination__title-wrapper {
+    display: flex;
+    justify-content: space-between; /* Space between the title and button */
+    align-items: center; /* Vertically align the items */
+}
+
+.destination__titre {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #333; /* Dark gray color */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent title from wrapping */
+}
+
+/* Bouton "Afficher" */
+.destination__toggle-button {
+    background-color: #06c7ba;  /* Green background */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 16px; /* Larger padding for a more prominent button */
+    border-radius: 5px; /* Fully rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.destination__toggle-button:hover {
+    background-color: #388e3c;  /* Darker green when hovered */
+    transform: scale(1.05);  /* Slight zoom on hover */
+}
+
+/* Animation fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Le texte (extrait) */
+.destination__texte {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    display: none; /* Caché par défaut */
+    animation: fadeIn 0.5s ease-in-out; /* Ajout de l'animation fade-in */
+}
+
+/* Lien "Lire plus" */
+.destination__lireplus {
+    display: block;  /* Affiché après l'animation */
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #007bb5;  /* Soft blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.destination__lireplus:hover {
+    color: #004f70;  /* Darker blue when hovered */
+}
+
+
+/* Categories */
+.categorie__ul {
+    gap: 15px;
+    list-style-type: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.categorie__ul__li {
+    padding: 12px 20px;
+    flex-grow: 1;
+    border-radius: 5px;  /* Fully rounded corners */
+    background-color: #1e88e5;  /* Blue background */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.categorie__ul__li:hover {
+    background-color: #0277bd;  /* Slightly darker blue on hover */
+    transform: scale(1.05);  /* Slight zoom effect on hover */
+}
+
+.categorie__ul__li.active {
+    background-color: #0d47a1;  /* Darker blue for active state */
+    color: white;
+}
+
+/* Link styling inside .destination__item */
+.destination__list a {
+    color: #007bb5;  /* Soft blue link */
+    text-decoration: none;  /* Remove underline by default */
+}
+
+.destination__list a:hover {
+    text-decoration: underline;  /* Underline link on hover for better visibility */
 }
