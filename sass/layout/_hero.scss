@@ -1,23 +1,52 @@
 .hero{
     position: relative;
-    //background-image: url("images/maldives.jpg");
-    min-height: 90vh;
+    // background-image: url("images/maldives.jpg");
+    min-height: 100vh;
     background-repeat: no-repeat;
-
-    &__bouton{
-        background-color: rgb(112, 255, 255);
-        border: 1px solid blue;
-        border-radius: 1px;
-    }
-
-    &__carrousel {
+    background-size: cover;
+ 
+    &__carrousel{
         position: absolute;
         min-height: 100vh;
-        width: 100%;
+        width : 100%;
         background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+ 
     }
 
-    &__contenu {
+    .hero__carrousel.active {
+        opacity: 1;
+        z-index: 2;
+    }
+    &__radio {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        top: 90vh;
+        z-index: 4;
+    }
+
+
+&__button{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 15px;
+        border: 1px solid cyan;
+        border-radius: 5px;
+        background-color: cyan;
+    }
+ 
+    &__contenu{
+        position: relative;
         z-index: 9;
     }
 }

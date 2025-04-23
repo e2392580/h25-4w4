@@ -14,6 +14,12 @@ for($k=0; $k<3; $k++){
         <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[0]?>)"></div>
         <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[1]?>)"></div>
         <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[2]?>)"></div>
+        <div class="hero__radio">
+            <input class="hero__radio__input" data-id_radio="0" type="radio" name="carroussel" id="">
+            <input class="hero__radio__input" data-id_radio="1" type="radio" name="carroussel" id="">
+            <input class="hero__radio__input" data-id_radio="2" type="radio" name="carroussel" id="">
+        
+        </div>
         <div class="hero__contenu global">
           <?php get_template_part('gabarit/descriptions'); ?>
             <div class="hero__icone">
