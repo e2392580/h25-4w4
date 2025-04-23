@@ -1,12 +1,12 @@
-<footer>
 <?php 
-$footer_couleur = get_theme_mod('footer_couleur', '#aaa');
+$footer_couleur = get_theme_mod('footer_couleur', '#orange');
 $footer_adresse = get_theme_mod('footer_adresse', '5800 Sherbrooke-est Montréal (Québec) H1X 2A2');
 $footer_telephone = get_theme_mod('footer_telephone', '(514-254-7131)');
 $footer_mission = get_theme_mod('footer_mission', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, nostrum sint deserunt architecto dolorem nisi delectus pariatur odit eius! Maiores dolore provident soluta culpa minus nesciunt doloremque vero incidunt accusamus!');
 
 genere_vague($footer_couleur);
 ?>
+<footer>
 <footer style="background-color:  <?= $footer_couleur ?>;"></footer>
   <div class="piedpage">
     <section class="piedpage__s1">

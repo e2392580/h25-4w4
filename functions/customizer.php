@@ -147,6 +147,19 @@ function theme_tp_customize_register($wp_customize) {
             'section' => 'section_404',
             'type' => 'text',
         )); 
+
+               ///////////////////// ajout du contrôle des couleurs de texte dans le hero
+               $wp_customize->add_setting('footer_couleur', array(
+                'default' => '',
+                'sanitize_callback' => 'esc_url_raw',
+            ));
+        
+            // Controle donnee  (changement de couleur dans le hero)
+            $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_couleur', array(
+                'label' => __('sélection de la couleur', 'theme_tp'),
+                'section' => 'footer_section',
+            )));
+        
     }
     
 
