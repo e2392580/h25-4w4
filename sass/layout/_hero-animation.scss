@@ -1,0 +1,26 @@
+@keyframes contenu{
+    100%{
+      transform:translate(0, 0);
+    }
+   
+  }
+
+  .hero__titre{
+    transform: translateY(-1000px);
+  }
+  .hero__description{
+    transform: translateX(-1000px);
+    animation-delay: 1s;
+  }
+
+  .hero__animation {
+    display: none;
+    &--active {
+      display: block;
+      .hero__titre, .hero__description{
+        position: relative;
+        animation: contenu 1s cubic-bezier(.09,.72,.36,1) forwards;
+      }
+    }
+    
+  }

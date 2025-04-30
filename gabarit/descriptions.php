@@ -1,7 +1,6 @@
 <?php 
  $hero_auteur = get_theme_mod('hero_auteur', 'Default Title');
  ?>
-<h1 class="hero__titre"><?php bloginfo("name") ?></h1>
             <p class="hero__description">
              <?php bloginfo("description") ?>
             </p>

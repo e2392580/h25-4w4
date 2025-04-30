@@ -21,6 +21,18 @@ for($k=0; $k<3; $k++){
         
         </div>
         <div class="hero__contenu global">
+            <div class="hero__animation hero__animation--active">
+                <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
+                <p class="hero__description">
+                <?php bloginfo('description'); ?>
+                </p>
+            </div>
+            <div class="hero__animation">
+                <h1 class="hero__titre">Lorem ipsum dolor</h1>
+                <p class="hero__description"> 
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                </p>
+            </div>
           <?php get_template_part('gabarit/descriptions'); ?>
             <div class="hero__icone">
             <?php get_template_part('gabarit/icones'); ?>

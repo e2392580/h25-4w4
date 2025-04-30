@@ -367,6 +367,11 @@ main h1{
   text-decoration: underline; /* Underline link on hover for better visibility */
 }
 
+.vague {
+  top: 50px;
+  position: relative;
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
@@ -683,4 +688,28 @@ footer {
   #menu-item-120, #menu-item-121, #menu-item-122, #menu-item-123 {
     font-size: 1.2rem;
   }
+}
+@keyframes contenu {
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.hero__titre {
+  transform: translateY(-1000px);
+}
+
+.hero__description {
+  transform: translateX(-1000px);
+  animation-delay: 1s;
+}
+
+.hero__animation {
+  display: none;
+}
+.hero__animation--active {
+  display: block;
+}
+.hero__animation--active .hero__titre, .hero__animation--active .hero__description {
+  position: relative;
+  animation: contenu 1s cubic-bezier(0.09, 0.72, 0.36, 1) forwards;
 }/*# sourceMappingURL=style.css.map */
