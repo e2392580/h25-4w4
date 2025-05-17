@@ -30,7 +30,7 @@ function categories_liste($parent_slug){
 function genere_vague($footer_couleur){?>
  
     <svg class="vague" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
-      <path fill="<?php echo $footer_couleur ?> "  fill-opacity="1">  
+      <path fill="rgb(236, 136, 13) "  fill-opacity="1">  
         <animate attributeName="d" dur="4s" repeatCount="indefinite"
           values="
             M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
@@ -40,4 +40,28 @@ function genere_vague($footer_couleur){?>
              />
       </path>
     </svg>
-    <?php }
+    <?php 
+    }
+
+    function afficher_icones_sociales() {
+        $nb_icones = get_theme_mod('nombre_icones_sociales', 3);
+    
+        if ($nb_icones <= 0) return;
+    
+        echo '<ul class="icones-sociales">';
+        for ($i = 0; $i < $nb_icones; $i++) {
+            $url = esc_url(get_theme_mod("social_url_$i"));
+            $icon = esc_url(get_theme_mod("social_icon_$i"));
+    
+            if ($url && $icon) {
+                echo '<li>';
+                echo '<a href="' . $url . '" target="_blank" rel="noopener noreferrer">';
+                echo '<img src="' . $icon . '" alt="Icône sociale ' . ($i + 1) . '">';
+                echo '</a>';
+                echo '</li>';
+            }
+        }
+        echo '</ul>';
+    }
+
+

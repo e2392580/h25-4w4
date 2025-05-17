@@ -35,7 +35,7 @@ for($k=0; $k<3; $k++){
             </div>
           <?php get_template_part('gabarit/descriptions'); ?>
             <div class="hero__icone">
-            <?php get_template_part('gabarit/icones'); ?>
+            <?php afficher_icones_sociales(); ?>
             </div>
 
         </div>

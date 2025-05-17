@@ -33,7 +33,9 @@ genere_vague($footer_couleur);
       </div>
     </section>
     <section class="piedpage__s2">
-    <?php get_template_part('gabarit/icones'); ?>
+      <div class="piedpage__s2__icone">
+      <?php afficher_icones_sociales(); ?>
+      </div>
     </section>
     <section class="piedpage__s3">
     <?php wp_nav_menu(array(

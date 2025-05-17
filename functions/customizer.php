@@ -160,6 +160,53 @@ function theme_tp_customize_register($wp_customize) {
                 'section' => 'footer_section',
             )));
         
+                // ========== Section Réseaux sociaux ==========
+    $wp_customize->add_section('social_section', array(
+        'title' => __('Icônes Sociales', 'theme_4w4'),
+        'priority' => 60,
+      ));
+  
+      // Nombre d’icônes sociales
+      $wp_customize->add_setting('nombre_icones_sociales', array(
+        'default' => 3,
+        'sanitize_callback' => 'absint',
+        'transport' => 'refresh',
+      ));
+      $wp_customize->add_control('nombre_icones_sociales', array(
+        'label' => __('Nombre d\'icônes sociales', 'theme_4w4'),
+        'section' => 'social_section',
+        'type' => 'number',
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 10,
+        ),
+      ));
+  
+      // Champs dynamiques pour chaque icône
+      $nb_icones = get_theme_mod('nombre_icones_sociales', 3);
+  
+      for ($i = 0; $i < $nb_icones; $i++) {
+        // URL du réseau social
+        $wp_customize->add_setting("social_url_$i", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control("social_url_$i", array(
+            'label' => sprintf(__('Lien #%d', 'theme_4w4'), $i + 1),
+            'section' => 'social_section',
+            'type' => 'url',
+        ));
+  
+        // Image de l'icône
+        $wp_customize->add_setting("social_icon_$i", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "social_icon_$i", array(
+            'label' => sprintf(__('Icône #%d', 'theme_4w4'), $i + 1),
+            'section' => 'social_section',
+        )));
+        } 
     }
     
 

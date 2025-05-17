@@ -1,0 +1,28 @@
+.icones-sociales {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  
+  .icones-sociales li {
+    transition: transform 0.2s ease;
+  }
+  
+  .icones-sociales li:hover {
+    transform: scale(1.1);
+  }
+  
+  .icones-sociales img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  
+  .icones-sociales a:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.2);
+  }
