@@ -10,6 +10,7 @@ footer{
 .piedpage{
   display: flex;
   flex-direction: column;
+  height: 630px;
   &__s1{
     display: flex;
     flex-wrap: wrap;
@@ -40,5 +41,7 @@ footer{
 &__s3 {
     display: flex;
     justify-content: center;
+    position: relative;
+    top: 100px;
 }
 }
