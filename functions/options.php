@@ -12,6 +12,11 @@
 }
 add_action( 'after_setup_theme', 'mon_theme_supports' );
 
+// In functions.php
+function theme_enqueue_styles() {
+    wp_enqueue_style('single-post-style', get_template_directory_uri() . '/css/single-post.css');
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 function theme_4w4_enqueue_styles() {
 wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');

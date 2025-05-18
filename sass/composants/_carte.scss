@@ -2,64 +2,60 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 350px; // Ajustable si besoin
-    height: 100%; // Assure que toutes les cartes ont la même hauteur
+    max-width: 350px;
     border: 1px solid #ddd;
     border-radius: 8px;
-
-    &__image {
-        width: 100%;
-        height: 200px; // Uniformise la taille des images
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; // Assure une bonne mise en page sans déformation
-        }
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
-
+  
+    .carte__link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+  
     &__contenu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; // Répartit l’espace verticalement
-        flex-grow: 1; // Remplit l’espace restant pour garder une hauteur égale
-        padding: 16px;
-        background-color: rgb(184, 241, 255);
+      padding: 16px;
+      background-color: rgb(184, 241, 255);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+      height: 100%;
     }
-
+      
     &__titre {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 8px;
-    }
-
-    &__description {
-        flex-grow: 1; // Permet d’ajuster la hauteur et de garder un alignement propre
+      }
+    
+      &__description {
+        flex-grow: 1;
         font-size: 1rem;
         margin-bottom: 12px;
-    }
+      }
+    
+      // L'ancien bouton peut être retiré :
+      &__bouton {
+        display: none;
+      }
+  }
 
-    &__bouton {
-        align-self: flex-start;
-        padding: 6px 12px;
-        text-decoration: none;
-        border: 2px solid black;
-        border-radius: 12%;
-        color: rgb(0, 0, 0);
-        background-color: #00ffe5;
-    }
-}
-.post-categories {
-    list-style-type: none;
-    align-self: flex-start;
-    padding: 6px 12px;
-    text-decoration: none;
-    border: 2px solid black;
-    border-radius: 12%;
-    color: rgb(0, 0, 0);
-    background-color: #00b3ff;
-}
-.post-categories a{
-    text-decoration: none;
-    color: black;
-}
+  .grid-cartes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+
+  
+  

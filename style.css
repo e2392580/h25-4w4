@@ -113,26 +113,31 @@ Les composants
   flex-direction: column;
   width: 100%;
   max-width: 350px;
-  height: 100%;
   border: 1px solid #ddd;
   border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
-.carte__image {
-  width: 100%;
-  height: 200px;
+.carte:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-.carte__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.carte .carte__link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .carte__contenu {
+  padding: 16px;
+  background-color: rgb(184, 241, 255);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-  padding: 16px;
-  background-color: rgb(184, 241, 255);
+  height: 100%;
 }
 .carte__titre {
   font-size: 1.2rem;
@@ -145,29 +150,13 @@ Les composants
   margin-bottom: 12px;
 }
 .carte__bouton {
-  align-self: flex-start;
-  padding: 6px 12px;
-  text-decoration: none;
-  border: 2px solid black;
-  border-radius: 12%;
-  color: rgb(0, 0, 0);
-  background-color: #00ffe5;
+  display: none;
 }
 
-.post-categories {
-  list-style-type: none;
-  align-self: flex-start;
-  padding: 6px 12px;
-  text-decoration: none;
-  border: 2px solid black;
-  border-radius: 12%;
-  color: rgb(0, 0, 0);
-  background-color: #00b3ff;
-}
-
-.post-categories a {
-  text-decoration: none;
-  color: black;
+.grid-cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 /*.galerie__img{
@@ -744,4 +733,79 @@ footer {
 .hero__animation--active .hero__titre, .hero__animation--active .hero__description {
   position: relative;
   animation: contenu 1s cubic-bezier(0.09, 0.72, 0.36, 1) forwards;
+}
+
+.populaire {
+  background-color: #f5f7fa;
+  padding: 4rem 1rem;
+}
+.populaire .global.single-post {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.populaire .destination__card {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .populaire .destination__card {
+    flex-direction: row;
+  }
+}
+.populaire .destination__card .destination__image {
+  flex: 1;
+}
+.populaire .destination__card .destination__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+@media (min-width: 768px) {
+  .populaire .destination__card .destination__image img {
+    border-radius: 1.5rem 0 0 1.5rem;
+  }
+}
+.populaire .destination__card .destination__content {
+  flex: 2;
+  padding: 2rem;
+}
+.populaire .destination__card .destination__content .destination__meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.populaire .destination__card .destination__content .destination__meta p {
+  margin: 0.2rem 0;
+}
+.populaire .destination__card .destination__content .destination__titre {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+.populaire .destination__card .destination__content .destination__description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+.populaire .destination__card .destination__content .temperature {
+  background-color: #eef2f7;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+.populaire .destination__card .destination__content .temperature h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+  color: #2a4d69;
+}
+.populaire .destination__card .destination__content .temperature p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
 }/*# sourceMappingURL=style.css.map */
