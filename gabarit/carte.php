@@ -13,7 +13,15 @@
       ?>
       <h4 class="carte__titre"><?php the_title(); ?></h4>
       <p class="carte__description"><?php echo wp_trim_words(get_the_content(), 10, "..."); ?></p>
-      <?php the_category(); ?>
+      <?php
+      $categories = get_the_category();
+      $categorie_actuelle = get_queried_object();
+      if (is_category()) {
+        categorie_par_destination($categorie_actuelle);
+      } else {
+        categorie_par_destination('populaire');
+      }
+    ?>
       <p>Température maximum : <?php the_field("temperature_maximum"); ?> °C</p>
     </div>
   </a>

@@ -42,6 +42,7 @@ function genere_vague($footer_couleur){?>
     </svg>
     <?php 
     }
+    
 
     function afficher_icones_sociales() {
         $nb_icones = get_theme_mod('nombre_icones_sociales', 3);
@@ -63,5 +64,20 @@ function genere_vague($footer_couleur){?>
         }
         echo '</ul>';
     }
+    function categorie_par_destination($cat_a_retirer = '') {
+        $categories = get_the_category();
+        $cat_slug_retirer = is_object($cat_a_retirer) ? $cat_a_retirer->slug : $cat_a_retirer;
+    
+        if (!empty($categories)) {
+            echo '<ul class="post-categories">';
+            foreach ($categories as $cat) {
+                if ($cat->slug !== $cat_slug_retirer) {
+                    echo '<li><a href="' . get_category_link($cat->term_id) . '">' . esc_html($cat->name) . '</a></li>';
+                }
+            }
+            echo '</ul>';
+        }
+    }
+    
 
 

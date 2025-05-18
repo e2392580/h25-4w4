@@ -132,7 +132,7 @@ Les composants
 }
 .carte__contenu {
   padding: 16px;
-  background-color: rgb(184, 241, 255);
+  background-color: rgb(216, 247, 255);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -205,7 +205,7 @@ main h1{
   border: 1px solid #aaa;
   border-radius: 3px;
   color: white;
-  background-color: rgb(51, 75, 255);
+  background-color: rgb(51, 116, 255);
   cursor: pointer; /* Change cursor to a hand when hovered */
   transition: background-color 0.3s ease, border 0.3s ease;
 }
@@ -215,6 +215,50 @@ main h1{
 .categorie__ul__li.active {
   background-color: rgb(154, 162, 224); /* Active button background */
   border: 2px solid rgb(255, 255, 255); /* Optional: add a border to highlight the active button */
+}
+
+.categories-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.categorie-bouton {
+  padding: 6px 12px;
+  border: 2px solid #00b3ff;
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: #e0f7ff;
+  color: #0077a6;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.categorie-bouton:hover {
+  background-color: #00b3ff;
+  color: white;
+  transform: scale(1.05);
+}
+
+.post-categories li {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 4px;
+  background-color: #7ed8ff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.post-categories li:hover {
+  background-color: #0091cc;
+  color: #fff;
+  cursor: pointer;
+}
+.post-categories li a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .destination {
@@ -609,7 +653,7 @@ footer {
   cursor: pointer;
 }
 
-.erreur_404 {
+.erreur {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -618,15 +662,20 @@ footer {
   text-align: center;
   padding: 20px;
 }
-.erreur_404 h1 {
+.erreur h1 {
   font-size: 5rem;
+  color: #ff6b6b;
   margin-bottom: 10px;
-  background-color: rgba(255, 255, 254, 0.39);
 }
-.erreur_404 p {
+.erreur h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+.erreur p {
   font-size: 1.2rem;
-  max-width: 1000px;
-  background-color: rgba(255, 255, 254, 0.39);
+  color: #000000;
+  max-width: 600px;
 }
 
 .button__erreur {
@@ -636,9 +685,10 @@ footer {
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
-  color: rgb(69, 168, 255);
-  background: rgb(248, 248, 62);
+  color: white;
+  background: linear-gradient(135deg, #6dAEFF, #0056b3);
   border: none;
+  border-radius: 50px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -655,61 +705,6 @@ footer {
   gap: 10px;
 }
 
-#menu-menu-404 {
-  gap: 50px;
-}
-
-#menu-item-120, #menu-item-121, #menu-item-122, #menu-item-123 {
-  font-size: 2rem;
-  background-color: rgba(66, 109, 203, 0.5);
-}
-
-.menu-item a {
-  color: black;
-}
-
-@media (max-width: 768px) {
-  .erreur_404 h1 {
-    font-size: 3rem;
-  }
-  .erreur_404 p {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-  .button__erreur {
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-  .icones {
-    flex-direction: column;
-    align-items: center;
-  }
-  #menu-menu-404 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  #menu-item-120, #menu-item-121, #menu-item-122, #menu-item-123 {
-    font-size: 2rem;
-    background-color: rgba(66, 109, 203, 0.5);
-  }
-}
-@media (max-width: 480px) {
-  .erreur_404 h1 {
-    font-size: 2.5rem;
-  }
-  .erreur_404 p {
-    font-size: 0.9rem;
-  }
-  .button__erreur {
-    padding: 8px 16px;
-    font-size: 1rem;
-  }
-  #menu-item-120, #menu-item-121, #menu-item-122, #menu-item-123 {
-    font-size: 1.2rem;
-  }
-}
 @keyframes contenu {
   100% {
     transform: translate(0, 0);
