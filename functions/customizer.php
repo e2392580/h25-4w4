@@ -159,6 +159,17 @@ function theme_tp_customize_register($wp_customize) {
                 'label' => __('sélection de la couleur', 'theme_tp'),
                 'section' => 'footer_section',
             )));
+                //////////////Debut ajout image destination
+      $wp_customize->add_setting('footer_image_destination', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw', // Pour sécuriser l'URL de l'image
+      ));
+      
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_image_destination', array(
+        'label' => __('Image de Destination', 'theme_4w4'),
+        'section' => 'footer_section',
+        'settings' => 'footer_image_destination',
+      )));
         
                 // ========== Section Réseaux sociaux ==========
     $wp_customize->add_section('social_section', array(

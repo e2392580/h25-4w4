@@ -44,4 +44,42 @@ footer{
     position: relative;
     top: 100px;
 }
+
 }
+.piedpage__s1__description {
+    position: relative;
+    padding: 30px 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0); // léger fond blanc pour lisibilité
+  
+    h3 {
+      font-size: 1.9rem;
+      color: #000000;
+      margin-bottom: 15px;
+      z-index: 3;
+      position: relative;
+    }
+  
+    .piedpage__s1__mission__background {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.15;  // transparence
+      z-index: 1;
+      pointer-events: none; // ne gêne pas la sélection texte
+    }
+  
+    .footer_mission {
+      position: relative;
+      font-size: 1.1rem;
+      color: #222;
+      line-height: 1.6;
+      z-index: 2;
+    }
+  }
+  
+
+  

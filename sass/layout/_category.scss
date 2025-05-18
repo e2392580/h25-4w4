@@ -1,0 +1,42 @@
+.categorie__titre {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ff9a00, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.categorie__description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.7;
+  background-color: #fffbe6;
+  padding: 25px 30px;
+  border-left: 6px solid #f39c12;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.populaire.categorie__cartes {
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  padding: 80px 20px;
+  border-top: 5px solid #00bcd4;
+}
+
+.global.categorie__carte {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

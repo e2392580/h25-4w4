@@ -618,6 +618,41 @@ footer {
   top: 100px;
 }
 
+.piedpage__s1__description {
+  position: relative;
+  padding: 30px 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0);
+}
+.piedpage__s1__description h3 {
+  font-size: 1.9rem;
+  color: #000000;
+  margin-bottom: 15px;
+  z-index: 3;
+  position: relative;
+}
+.piedpage__s1__description .piedpage__s1__mission__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+.piedpage__s1__description .footer_mission {
+  position: relative;
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.6;
+  z-index: 2;
+}
+
 .form-container {
   display: flex;
   justify-content: center;
@@ -803,4 +838,108 @@ footer {
 .populaire .destination__card .destination__content .temperature p {
   margin: 0.4rem 0;
   font-size: 0.95rem;
+}
+
+.categorie__titre {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ff9a00, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.categorie__description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.7;
+  background-color: #fffbe6;
+  padding: 25px 30px;
+  border-left: 6px solid #f39c12;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.populaire.categorie__cartes {
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  padding: 80px 20px;
+  border-top: 5px solid #00bcd4;
+}
+
+.global.categorie__carte {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.site__main {
+  background: linear-gradient(to right, #caf0f8, #edf6f9);
+  padding: 60px 20px;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.recherche__section {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
+}
+.recherche__section article {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+.recherche__section article:hover {
+  background-color: #e0f7fa;
+  border-color: #00b4d8;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+  transform: translateY(-5px);
+}
+.recherche__section article h5 {
+  font-size: 1.8rem;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+.recherche__section article h5 a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+.recherche__section article h5 a:hover {
+  color: #0096c7;
+}
+.recherche__section article p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+.recherche__section article hr {
+  margin-top: 20px;
+  border: none;
+  height: 2px;
+  background-color: #ade8f4;
+  width: 100%;
+}
+.recherche__section > p {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-top: 40px;
 }/*# sourceMappingURL=style.css.map */
