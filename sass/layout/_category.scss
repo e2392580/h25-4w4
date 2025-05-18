@@ -2,14 +2,11 @@
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
-  color: #2c3e50;
+  color: #ffbb00;
   margin-top: 40px;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(to right, #ff9a00, #ffd700);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .categorie__description {
@@ -21,7 +18,7 @@
   line-height: 1.7;
   background-color: #fffbe6;
   padding: 25px 30px;
-  border-left: 6px solid #f39c12;
+  border-left: 6px solid #69d5ff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -29,7 +26,7 @@
 .populaire.categorie__cartes {
   background: linear-gradient(to bottom, #e0f7fa, #ffffff);
   padding: 80px 20px;
-  border-top: 5px solid #00bcd4;
+  border-top: 5px solid #03afff;
 }
 
 .global.categorie__carte {

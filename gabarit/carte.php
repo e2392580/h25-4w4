@@ -10,7 +10,7 @@
         if (has_post_thumbnail()) {
           the_post_thumbnail('thumbnail');
         }
-      ?>
+      ?> 
       <h4 class="carte__titre"><?php the_title(); ?></h4>
       <p class="carte__description"><?php echo wp_trim_words(get_the_content(), 10, "..."); ?></p>
       <?php

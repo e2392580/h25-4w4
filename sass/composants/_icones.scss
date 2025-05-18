@@ -2,8 +2,8 @@
     display: flex;
     gap: 1rem;
     list-style: none;
-    padding: 10px;
-    margin-top: 80px;
+    padding: 13px;
+    margin-top: 10px;
   }
   
   .icones-sociales li {
@@ -11,19 +11,13 @@
   }
   
   .icones-sociales li:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   
   .icones-sociales img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    filter: grayscale(100%);
+    width: 40px;
+    height: 40px;
     transition: filter 0.3s ease, transform 0.3s ease;
   }
   
-  .icones-sociales a:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.2);
-  }
   

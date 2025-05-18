@@ -35,7 +35,6 @@ genere_vague($footer_couleur);
     </section>
     <section class="piedpage__s2">
       <div class="piedpage__s2__icone">
-      <?php afficher_icones_sociales(); ?>
       </div>
     </section>
     <section class="piedpage__s3">

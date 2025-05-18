@@ -67,15 +67,25 @@ Les composants
   flex-direction: row;
   list-style-type: none;
   gap: 10px 0;
+  padding: 0;
+  margin: 0;
 }
 @media screen and (max-width: 800px) {
   .menu {
     flex-direction: column;
+    gap: 10px;
   }
 }
 .menu-item a {
   text-decoration: none;
-  padding: 4px;
+  padding: 8px 12px;
+  font-family: Arial, sans-serif;
+  color: black;
+  display: block;
+}
+.menu-item a:hover, .menu-item a:focus {
+  background-color: #f0f0f0;
+  color: #333;
 }
 
 .menu__li a {
@@ -409,8 +419,8 @@ main h1{
   display: flex;
   gap: 1rem;
   list-style: none;
-  padding: 10px;
-  margin-top: 80px;
+  padding: 13px;
+  margin-top: 10px;
 }
 
 .icones-sociales li {
@@ -418,20 +428,13 @@ main h1{
 }
 
 .icones-sociales li:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .icones-sociales img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  filter: grayscale(100%);
+  width: 40px;
+  height: 40px;
   transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.icones-sociales a:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.2);
 }
 
 /* /////////////////////////////////
@@ -615,7 +618,7 @@ footer {
   display: flex;
   justify-content: center;
   position: relative;
-  top: 100px;
+  top: 200px;
 }
 
 .piedpage__s1__description {
@@ -844,14 +847,11 @@ footer {
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
-  color: #2c3e50;
+  color: #ffbb00;
   margin-top: 40px;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(to right, #ff9a00, #ffd700);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .categorie__description {
@@ -863,7 +863,7 @@ footer {
   line-height: 1.7;
   background-color: #fffbe6;
   padding: 25px 30px;
-  border-left: 6px solid #f39c12;
+  border-left: 6px solid #69d5ff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -871,7 +871,7 @@ footer {
 .populaire.categorie__cartes {
   background: linear-gradient(to bottom, #e0f7fa, #ffffff);
   padding: 80px 20px;
-  border-top: 5px solid #00bcd4;
+  border-top: 5px solid #03afff;
 }
 
 .global.categorie__carte {
