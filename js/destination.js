@@ -109,7 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const menuContainer = document.getElementById('menu-pays');
-  const destinationsContainer = document.getElementById('destination');
+  const destinationsContainer = document.querySelector('.destination__list');
+
 
   // Création du menu des pays
   paysList.forEach(pays => {
@@ -127,7 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchDestinations("France");
 
   function fetchDestinations(pays) {
-    const url = `/wp-json/wp/v2/posts?search=${encodeURIComponent(pays)}`;
+    const domaine = window.location.origin + '/4w4-gr2'; // base URL du site
+    const isCategory = Number.isInteger(parseInt(pays));
+    const param = isCategory ? `categories=${pays}` : `search=${encodeURIComponent(pays)}`;
+    const url = `${domaine}/wp-json/wp/v2/posts?${param}`;
+    
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -138,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("Erreur API:", error);
       });
   }
+  
 
   function afficherDestinations(posts) {
     destinationsContainer.innerHTML = '';

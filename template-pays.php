@@ -23,9 +23,8 @@ $couleur_bas = '#ffd700';
  creer_vague($couleur_haut, $couleur_bas); ?>
 <section class="destination-section">
   <div id="menu-pays" class="menu-pays"></div>
-  <div class="destination__list"></div>
+<div class="destination__list"></div>
 </section>
- 
 
 </section>
 

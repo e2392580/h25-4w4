@@ -445,65 +445,77 @@ main h1{
   background-color: lightblue;
 }
 
-#menu-pays {
+.destination-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f8faff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu-pays {
   display: flex;
   flex-wrap: wrap;
+  gap: 15px;
   justify-content: center;
-  gap: 12px;
-  margin: 20px 0;
+  margin-bottom: 30px;
 }
-
-.btn-pays {
-  padding: 10px 18px;
-  border: 2px solid #007bff;
-  border-radius: 8px;
-  background-color: #e6f0ff;
-  color: #0056b3;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
-}
-.btn-pays:hover {
-  background-color: #007bff;
+.menu-pays button {
+  background-color: #1e88e5;
   color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.menu-pays button:hover {
+  background-color: #1565c0;
   transform: scale(1.05);
 }
-.btn-pays.active {
-  background-color: #003e80;
-  color: #fff;
-  border: 2px solid white;
+.menu-pays button.active {
+  background-color: #0d47a1;
+  box-shadow: 0 0 10px rgba(13, 71, 161, 0.6);
 }
 
-.destinations {
+.destination__list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
-
-.destination {
-  width: 100%;
-  max-width: 700px;
-  background-color: #f5faff;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.destination__list .destination__item {
+  background-color: #66abe3;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.destination .accordion-title {
-  font-size: 1.3rem;
-  color: #0056b3;
-  cursor: pointer;
-  transition: color 0.3s ease;
+.destination__list .destination__item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
 }
-.destination .accordion-title:hover {
-  color: #003e80;
+.destination__list .destination__item h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  color: #333;
 }
-.destination .accordion-content {
-  margin-top: 12px;
-  display: none;
+.destination__list .destination__item .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 5px;
 }
-.destination .accordion-content.open {
-  display: block;
+.destination__list .destination__item .accordion-content.open {
+  max-height: 1000px; /* suffisant pour ton contenu */
+  padding: 10px 5px;
+}
+.destination__list .destination__item .accordion-content p, .destination__list .destination__item .accordion-content ul, .destination__list .destination__item .accordion-content ol {
+  color: #222;
+  line-height: 1.5;
 }
 
 /* /////////////////////////////////
