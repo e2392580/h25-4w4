@@ -44,7 +44,7 @@ function genere_vague($footer_couleur){?>
     }
     
 function creer_vague($couleur_haut, $couleur_bas){?>
-<svg class="vague_API"  xmlns="http://www.w3.org/2000/svg" viewBox="0 100 1440 320">
+<svg class="vague_API"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path fill="#ffd700" fill-opacity="1">
         <animate attributeName="d" dur="4s" repeatCount="indefinite"
           values="

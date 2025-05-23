@@ -102,75 +102,105 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const paysList = [
-    "France", "États-Unis", "Canada", "Argentine", "Chili",
-    "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande",
-    "Chine", "Grèce", "Suisse"
-  ];
-
-  const menuContainer = document.getElementById('menu-pays');
-  const destinationsContainer = document.querySelector('.destination__list');
-
-
-  // Création du menu des pays
-  paysList.forEach(pays => {
-    const button = document.createElement('button');
-    button.textContent = pays;
-    button.classList.add('btn-pays');
-    button.dataset.pays = pays;
-    button.addEventListener('click', () => {
-      fetchDestinations(pays);
-    });
-    menuContainer.appendChild(button);
-  });
-
-  // Chargement initial : France
-  fetchDestinations("France");
-
-  function fetchDestinations(pays) {
-    const domaine = window.location.origin + '/4w4-gr2'; // base URL du site
-    const isCategory = Number.isInteger(parseInt(pays));
-    const param = isCategory ? `categories=${pays}` : `search=${encodeURIComponent(pays)}`;
-    const url = `${domaine}/wp-json/wp/v2/posts?${param}`;
-    
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        afficherDestinations(data);
-      })
-      .catch(error => {
-        destinationsContainer.innerHTML = `<p>Erreur lors du chargement des destinations.</p>`;
-        console.error("Erreur API:", error);
-      });
-  }
+    const paysList = [
+      "France", "États-Unis", "Canada", "Argentine", "Chili",
+      "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande",
+      "Chine", "Grèce", "Suisse"
+    ];
   
-
-  function afficherDestinations(posts) {
-    destinationsContainer.innerHTML = '';
-    if (posts.length === 0) {
-      destinationsContainer.innerHTML = `<p>Aucune destination trouvée pour ce pays.</p>`;
-      return;
-    }
-
-    posts.forEach(post => {
-      const container = document.createElement('div');
-      container.classList.add('destination');
-
-      const titre = document.createElement('h3');
-      titre.classList.add('accordion-title');
-      titre.innerHTML = post.title.rendered;
-
-      const contenu = document.createElement('div');
-      contenu.classList.add('accordion-content');
-      contenu.innerHTML = post.content.rendered;
-
-      titre.addEventListener('click', () => {
-        contenu.classList.toggle('open');
+    const menuContainer = document.getElementById('menu-pays');
+    const destinationsContainer = document.querySelector('.destination__list');
+  
+    // Création du menu des pays
+    paysList.forEach(pays => {
+      const button = document.createElement('button');
+      button.textContent = pays;
+      button.classList.add('btn-pays');
+      button.dataset.pays = pays;
+      button.addEventListener('click', () => {
+        fetchDestinations(pays);
+        setActiveButton(button);
       });
-
-      container.appendChild(titre);
-      container.appendChild(contenu);
-      destinationsContainer.appendChild(container);
+      menuContainer.appendChild(button);
     });
-  }
-});
+  
+    // Met en surbrillance le bouton actif
+    function setActiveButton(activeBtn) {
+      const buttons = menuContainer.querySelectorAll('button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      activeBtn.classList.add('active');
+    }
+  
+    // Chargement initial : France
+    fetchDestinations("France");
+    setActiveButton(menuContainer.querySelector('button'));
+  
+    function fetchDestinations(filtre) {
+      const domaine = window.location.origin + '/4w4-gr2'; // base URL du site
+      
+      // Vérifie si filtre est un nombre (catégorie) ou pas (search)
+      const isCategory = !isNaN(parseInt(filtre));
+      const param = isCategory 
+        ? `categories=${filtre}` 
+        : `search=${encodeURIComponent(filtre)}`;
+      
+      const url = `${domaine}/wp-json/wp/v2/posts?${param}`;
+  
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          afficherDestinations(data);
+        })
+        .catch(error => {
+          destinationsContainer.innerHTML = `<p>Erreur lors du chargement des destinations.</p>`;
+          console.error("Erreur API:", error);
+        });
+    }
+  
+    function afficherDestinations(posts) {
+      destinationsContainer.innerHTML = '';
+  
+      if (posts.length === 0) {
+        destinationsContainer.innerHTML = `<p>Aucune destination trouvée pour ce pays.</p>`;
+        return;
+      }
+  
+      posts.forEach(post => {
+        const container = document.createElement('div');
+        container.classList.add('destination__item');
+  
+        // Titre
+        const titre = document.createElement('h3');
+        titre.classList.add('accordion-title');
+        titre.innerHTML = post.title.rendered;
+  
+        // Bouton pour afficher/masquer la description
+        const btnToggle = document.createElement('button');
+        btnToggle.textContent = "Afficher la description";
+        btnToggle.classList.add('btn-toggle-description');
+  
+        // Contenu (description) caché par défaut
+        const contenu = document.createElement('div');
+        contenu.classList.add('accordion-content');
+        contenu.innerHTML = post.content.rendered;
+  
+        // Gestion du clic sur le bouton pour toggle contenu via classe "open"
+        btnToggle.addEventListener('click', () => {
+          if (contenu.classList.contains('open')) {
+            contenu.classList.remove('open');
+            btnToggle.textContent = "Afficher la description";
+          } else {
+            contenu.classList.add('open');
+            btnToggle.textContent = "Cacher la description";
+          }
+        });
+  
+        container.appendChild(titre);
+        container.appendChild(btnToggle);
+        container.appendChild(contenu);
+        destinationsContainer.appendChild(container);
+      });
+    }
+  });
+  
+  

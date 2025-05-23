@@ -10,8 +10,6 @@ $couleur_bas = '#ffd700';
  <section class="template_global">
 <div class="evenement">
   <h1><?php the_title(); ?></h1>
-  <p>Date de l'événement : <?php the_field('date_evenement'); ?></p>
-  <p>Lieu : <?php the_field('lieu_evenement'); ?></p>
   <div class="description">
     <?php the_field('description_evenement'); ?>
   </div>
@@ -19,8 +17,9 @@ $couleur_bas = '#ffd700';
 <div class="galerie">
     <?php the_content() ?>
 </div>
-<?php
- creer_vague($couleur_haut, $couleur_bas); ?>
+<div class="vague-container">
+  <?php creer_vague($couleur_haut, $couleur_bas); ?>
+</div>
 <section class="destination-section">
   <div id="menu-pays" class="menu-pays"></div>
 <div class="destination__list"></div>
