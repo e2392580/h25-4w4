@@ -415,6 +415,10 @@ main h1{
   position: relative;
 }
 
+.vague_API {
+  position: relative;
+}
+
 .icones-sociales {
   display: flex;
   gap: 1rem;
@@ -435,6 +439,71 @@ main h1{
   width: 40px;
   height: 40px;
   transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.template_global {
+  background-color: lightblue;
+}
+
+#menu-pays {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.btn-pays {
+  padding: 10px 18px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: #e6f0ff;
+  color: #0056b3;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+.btn-pays:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.05);
+}
+.btn-pays.active {
+  background-color: #003e80;
+  color: #fff;
+  border: 2px solid white;
+}
+
+.destinations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.destination {
+  width: 100%;
+  max-width: 700px;
+  background-color: #f5faff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.destination .accordion-title {
+  font-size: 1.3rem;
+  color: #0056b3;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.destination .accordion-title:hover {
+  color: #003e80;
+}
+.destination .accordion-content {
+  margin-top: 12px;
+  display: none;
+}
+.destination .accordion-content.open {
+  display: block;
 }
 
 /* /////////////////////////////////
